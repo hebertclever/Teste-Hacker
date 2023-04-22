@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :report, only: [:create]
+  resources :report, only: [:create, :index]
 end
