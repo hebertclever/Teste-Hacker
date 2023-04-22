@@ -47,6 +47,8 @@ Rails.application.configure do
 
   # Allow the hackerrank ide generated urls
   config.hosts << /[\w\-\.]+\.hackerrank\.com/
+  config.hosts << "vm-44427165-94f1-4835-af1b-762b3cdbd0f9-8000.in-vmprovider.projects.hrcdn.net"
+
 
   # Allow it to be iframed inside hackerrank IDE. Comment it out if
   # it is not something you want.
