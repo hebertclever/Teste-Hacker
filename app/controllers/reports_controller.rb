@@ -27,12 +27,14 @@ class ReportsController < ApplicationController
 
     # Filtragem por distância
     if params[:latitude].present? && params[:longitude].present? && params[:distance].present?
-      latitude = params[:latitude].to_f
-      longitude = params[:longitude].to_f
-      distance = params[:distance].to_f
-
       reports = reports.select do |report|
-        coordinates_distance(latitude, longitude, report.latitude, report.longitude) <= distance
+        distance = coordinates_distance(
+          report.latitude,
+          report.longitude,
+          params[:latitude].to_f,
+          params[:longitude].to_f
+        )
+        distance <= params[:distance].to_f
       end
     end
 
